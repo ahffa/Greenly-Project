@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Greenly</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="sytle.css"> 
 </head>
 <body>
     <div class="background-animation">
@@ -17,42 +16,93 @@
     <nav class="nav-bar">
         <a href="#">Greenly</a>
         <div class="input-box">
-            <input type="text" placeholder="Buscar produto...">
+            <input type="text" id="campoBusca" placeholder="Buscar produto...">
         </div>
         <div class="navigator">
-            <button>Quem somos?</button>
+            <button id="btnCart">Carrinho</button>
+            <button id="btnQuemSomos">Quem somos?</button> 
             <button>Vendas no Greenly</button>
             <button>Cadastrar-se</button>
             <button>Entrar</button>
         </div>
     </nav>
-    <section class="produtos-section">
-        <div class="cards-container">
-            <div class="card">
-                <img src="https://img.recraft.ai/2cQL69rBrKQHW4Wkc2BB19dftBb6CfVvaXr3MVHBUGg/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/4add56d8-8822-49e4-9e0e-d20ae456ebc5@jpg" alt="Produto Sustentável 1">
-                <h3>Gel hidratante de maçã verde</h3>
-                <h3>R$44,90</h3>
-                <button>Comprar</button>
-            </div>
-            <div class="card">
-                <img src="https://img.recraft.ai/EXWpEnAtuJEDMf_NDFtcXscNENU6BaPE3X5De_hvsF8/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/b260c7c7-2954-4228-b9ed-f6fde0b7b6c3@jpg" alt="Produto Sustentável 2">
-                <h3>Sabonete em barra 2x90g</h3>
-                <h3>R$29,90</h3>
-                <button>Comprar</button>
-            </div>
-            <div class="card">
-                <img src="https://img.recraft.ai/iHK_JpYl4QPTd8fPhC3he53bLmeNgnaEsgptVKhwq_U/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/40f2d56f-a92c-4526-88e3-aeb938739c46@jpg" alt="Produto Sustentável 3">
-                <h3>Primer Facial Líquido Hialurônico</h3>
-                <h3>R$49,90</h3>
-                <button>Comprar</button>
-            </div>
-            <div class="card">
-                <img src="https://img.recraft.ai/qxFT1Tlx1Ca1I_JKvGQJMcCJdhc8WBwoV7N3JiSXKBE/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/0ba6dca5-eedc-472b-ac61-af6373e6fab0@jpg" alt="Produto Sustentável 3">
-                <h3>Creme Firmador Ácido Hialurônico 40g</h3>
-                <h3>R$39,90</h3>
-                <button>Comprar</button>
-            </div>
+   <section class="produtos-section">
+    <div class="cards-container">
+
+        <div class="card">
+            <img src="https://img.recraft.ai/2cQL69rBrKQHW4Wkc2BB19dftBb6CfVvaXr3MVHBUGg/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/4add56d8-8822-49e4-9e0e-d20ae456ebc5@jpg" alt="Produto Sustentável 1">
+            <h3>Gel hidratante de maçã verde</h3>
+            <h3>R$44,90</h3>
+            <button onclick="addToCart('Gel hidratante de maçã verde', 44.90)">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://img.recraft.ai/EXWpEnAtuJEDMf_NDFtcXscNENU6BaPE3X5De_hvsF8/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/b260c7c7-2954-4228-b9ed-f6fde0b7b6c3@jpg" alt="Produto Sustentável 2">
+            <h3>Sabonete em barra 2x90g</h3>
+            <h3>R$29,90</h3>
+            <button onclick="addToCart('Sabonete em barra 2x90g', 29.90)">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://img.recraft.ai/iHK_JpYl4QPTd8fPhC3he53bLmeNgnaEsgptVKhwq_U/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/40f2d56f-a92c-4526-88e3-aeb938739c46@jpg" alt="Produto Sustentável 3">
+            <h3>Primer Facial Líquido Hialurônico</h3>
+            <h3>R$49,90</h3>
+            <button onclick="addToCart('Primer Facial Líquido Hialurônico', 49.90)">Comprar</button>
+        </div>
+
+        <div class="card">
+            <img src="https://img.recraft.ai/qxFT1Tlx1Ca1I_JKvGQJMcCJdhc8WBwoV7N3JiSXKBE/rs:fit:300:300:0/q:95/g:no/plain/abs://prod/images/0ba6dca5-eedc-472b-ac61-af6373e6fab0@jpg" alt="Produto Sustentável 4">
+            <h3>Creme Firmador Ácido Hialurônico 40g</h3>
+            <h3>R$39,90</h3>
+            <button onclick="addToCart('Creme Firmador Ácido Hialurônico 40g', 39.90)">Comprar</button>
+        </div>
+
+    </div>
+</section>
+
+    </section>
+
+    <section id="quem-somos" class="quem-somos-section">
+        <div class="content-wrapper">
+            <h2>🌍 Quem Somos no Greenly?</h2>
+            <p>
+                A Greenly nasceu com a missão de transformar a experiência de consumo, conectando você a produtos que respeitam o planeta. Somos mais que um e-commerce; somos uma curadoria de marcas e artesãos dedicados à sustentabilidade, ética e qualidade.
+            </p>
+            <p>
+                Acreditamos que cada compra é um voto. Ao escolher a Greenly, você está votando em um futuro mais verde, apoiando a redução de resíduos e o comércio justo. Seja a mudança com a gente!
+            </p>
         </div>
     </section>
+    <div id="modalLoginCadastro" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modalTitle">Entrar</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <button type="submit" id="submitButton">Entrar</button>
+        </form>
+        <p class="switch-mode">
+            Não tem conta? <a href="#" id="linkCadastrar">Cadastre-se</a>
+        </p>
+    </div>
+</div>
+
+<div id="cartModal">
+<div id="cartContent">
+<h2>Carrinho</h2>
+<div id="cart-items"></div>
+<h3 id="total">Total: R$ 0</h3>
+<button onclick="closeCart()">Fechar</button>
+</div>
+</div>
+
+    <script src="script.js"></script> 
 </body>
 </html>
